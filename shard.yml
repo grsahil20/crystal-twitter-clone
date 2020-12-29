@@ -1,12 +1,12 @@
-name: lucky_jumpstart
+name: crystal-twitter-clone
 version: 0.1.0
 
 authors:
   - your-name-here <your-email-here>
 
 targets:
-  lucky_jumpstart:
-    main: src/lucky_jumpstart.cr
+  crystal-twitter-clone:
+    main: src/crystal-twitter-clone.cr
 
 crystal: 0.35.1
 
