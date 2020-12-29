@@ -1,6 +1,6 @@
 class Me::ShowPage < MainLayout
   def page_title
-    "Your Profile"
+    "Profile"
   end
 
   def content
