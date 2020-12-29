@@ -34,6 +34,7 @@ class Shared::Field(T) < BaseComponent
 
   needs attribute : Avram::PermittedAttribute(T)
   needs label_text : String?
+  needs hint_text : String?
 
   def render
     div do
@@ -47,6 +48,7 @@ class Shared::Field(T) < BaseComponent
         render_warning_symbol unless attribute.valid?
       end
 
+      mount Shared::FieldHint, attribute, hint_text
       mount Shared::FieldErrors, attribute
     end
   end
