@@ -38,7 +38,7 @@ class Users::IndexPage < MainLayout
   end
 
   private def users_table_head
-    thead class: "bg-blue-50" do
+    thead class: "bg-blue-50 aa" do
       th "Sr. No"
       th "Id"
       th "Email"
