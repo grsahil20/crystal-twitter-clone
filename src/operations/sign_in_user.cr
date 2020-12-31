@@ -1,14 +1,15 @@
 class SignInUser < Avram::Operation
   param_key :user
-  # You can modify this in src/operations/mixins/user_from_email.cr
-  include UserFromEmail
 
-  attribute email : String
+  # You can modify this in src/operations/mixins/user_from_email_or_user_name.cr
+  include UserFromLoginId
+
+  attribute login_id : String
   attribute password : String
 
   # Run validations and yields the operation and the user if valid
   def run
-    user = user_from_email
+    user = user_from_login_id
     validate_credentials(user)
 
     if valid?
@@ -34,7 +35,7 @@ class SignInUser < Avram::Operation
       # Usually ok to say that an email is not in the system:
       # https://kev.inburke.com/kevin/invalid-username-or-password-useless/
       # https://github.com/luckyframework/lucky_cli/issues/192
-      email.add_error "is not in our system"
+      login_id.add_error "is not in our system"
     end
   end
 end

@@ -13,7 +13,7 @@ class SignUpConfirmationRequests::NewPage < AuthLayout
 
   private def render_form(op)
     form_for SignUpConfirmationRequests::Create do
-      mount Shared::Field, op.email, "Email", &.email_input(autofocus: "true", placeholder: "you@example.com")
+      mount Shared::Field, op.login_id, "Login", "Use email or username", &.text_input(autofocus: "true", placeholder: "you@example.com")
 
       div class: "mt-6" do
         span class: "block w-full rounded-md shadow-sm" do

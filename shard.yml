@@ -2,7 +2,7 @@ name: crystal-twitter-clone
 version: 0.1.0
 
 authors:
-  - your-name-here <your-email-here>
+  - Sahil Grover <gr.sahil20@gmail.com>
 
 targets:
   crystal-twitter-clone:

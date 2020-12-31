@@ -1,12 +1,12 @@
 class RequestPasswordReset < Avram::Operation
   # You can modify this in src/operations/mixins/user_from_email.cr
-  include UserFromEmail
+  include UserFromLoginId
 
-  attribute email : String
+  attribute login_id : String
 
   # Run validations and yield the operation and the user if valid
   def run
-    user = user_from_email
+    user = user_from_login_id
     validate(user)
 
     if valid?
@@ -17,9 +17,9 @@ class RequestPasswordReset < Avram::Operation
   end
 
   def validate(user : User?)
-    validate_required email
+    validate_required login_id
     if user.nil?
-      email.add_error "is not in our system"
+      login_id.add_error "is not in our system"
     end
   end
 end

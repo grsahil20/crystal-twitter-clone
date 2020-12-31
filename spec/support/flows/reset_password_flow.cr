@@ -11,8 +11,7 @@ class ResetPasswordFlow < BaseFlow
   def request_password_reset
     with_fake_token do
       visit PasswordResetRequests::New
-      fill_form RequestPasswordReset,
-        email: email
+      fill_form RequestPasswordReset, login_id: email
       click "@request-password-reset-button"
     end
   end

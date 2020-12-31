@@ -1,10 +1,10 @@
 class RequestSignUpConfirmation < Avram::Operation
-  include UserFromEmail
+  include UserFromLoginId
 
-  attribute email : String
+  attribute login_id : String
 
   def run
-    user = user_from_email
+    user = user_from_login_id
     validate(user)
 
     if valid?
@@ -15,6 +15,6 @@ class RequestSignUpConfirmation < Avram::Operation
   end
 
   def validate(user : User?)
-    validate_required email
+    validate_required login_id
   end
 end
