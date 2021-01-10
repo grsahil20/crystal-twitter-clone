@@ -1,19 +1,19 @@
-class UI::Named::CardWithFooter < BaseComponent
-  needs title : String
+class UI::Named::CardWithFooterAndHeader < BaseComponent
+  needs header : Proc(Void)
   needs body : Proc(Void)
   needs footer : Proc(Void)
 
   def render
     div class: "bg-white overflow-hidden shadow rounded-lg" do
-      card_title
+      card_header
       card_body
       card_footer
     end
   end
 
-  private def card_title
+  private def card_header
     div class: "border-b border-gray-200 py-5 sm:px-6" do
-      h1 title, class: "font-medium text-lg"
+      header.call
     end
   end
 

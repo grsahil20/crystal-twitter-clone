@@ -10,7 +10,7 @@ class Dashboard::IndexPage < MainLayout
       end
 
       div class: "px-4 py-5 sm:p-6" do
-        h3 "We should put some content here..."
+        h3 "We should put some content here... !!"
       end
     end
   end

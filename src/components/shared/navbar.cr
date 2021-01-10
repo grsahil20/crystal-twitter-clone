@@ -33,7 +33,7 @@ class Shared::Navbar < BaseComponent
   end
 
   private def render_logo
-    link "C_T_C", to: Home::Index, class: "leading-8 font-extrabold tracking-tight text-gray-900 text-xl sm:leading-10 hover:text-gray-600"
+    link "CTC", to: Home::Index, class: "leading-8 font-extrabold tracking-tight text-gray-900 text-xl sm:leading-10 hover:text-gray-600"
   end
 
   private def render_hamburger_icon
@@ -64,8 +64,8 @@ class Shared::Navbar < BaseComponent
 
   private def render_right_navbar(user : User)
     div class: "hidden sm:flex sm:space-x-2 items-center" do
+      link "Tweets", to: Tweets::Index, class: "text-sm font-medium text-gray-900 hover:text-gray-600"
       link user.name, to: Me::Show, class: "text-sm font-medium text-gray-900 hover:text-gray-600"
-
       mount UI::Button, &.link("Sign Out", to: SignIns::Delete, flow_id: "nav-sign-out-button")
     end
   end

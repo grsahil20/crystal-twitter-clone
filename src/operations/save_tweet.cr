@@ -1,5 +1,7 @@
 class SaveTweet < Tweet::SaveOperation
   needs user : User
+  needs parent : Tweet?
+
   permit_columns content
 
   # To save user provided params to the database, you must permit them

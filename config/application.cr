@@ -6,6 +6,6 @@ class Application
 end
 
 Application.configure do |settings|
-  settings.name = "c-t-c"
-  settings.support_email = "no-reply@c-t-c.com"
+  settings.name = "CTC"
+  settings.support_email = "no-reply@CTC.com"
 end

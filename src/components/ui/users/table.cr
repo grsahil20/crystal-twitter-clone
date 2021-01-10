@@ -2,7 +2,6 @@ class UI::Users::Table < BaseComponent
   needs users : UserQuery
 
   def render
-    span "users.count"
     mount UI::Named::Table, thead: ->{ users_table_head }, tbody: ->{ users_table_body }
   end
 
@@ -25,8 +24,7 @@ class UI::Users::Table < BaseComponent
   private def user_table_row(user : User, index : Int)
     tr class: "px-6 py-4 whitespace-nowrap" do
       td index + 1
-      td user.user_name
-      # td { link user.user_name, to: Users::Show.with(user) }
+      td { link user.user_name, to: ::Users::Show.with(user_id: user.user_name) }
       td user.email
     end
   end

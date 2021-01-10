@@ -10,6 +10,6 @@ class Users::Show < BrowserAction
   end
 
   memoize def fetch_user(user_id : String) : User
-    UserQuery.new.find(user_id)
+    UserQuery.new.user_name(user_id).first || UserQuery.new.find(user_id)
   end
 end
